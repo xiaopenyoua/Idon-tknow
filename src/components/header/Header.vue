@@ -7,19 +7,23 @@
                 class="logo-img"
             />
         </a>
+        <Input class="header-input" placeholder="请输入搜索内容" />
+        <div class="login-register">
+            <Button type="primary" ghost>登录</Button>
+            <Button type="text" ghost>注册</Button>
+        </div>
         <Tabs value="name1" class="header-tab">
-            <TabPane label="指南" name="name1" icon="md-ionitron"> </TabPane>
+            <TabPane label="指南" name="name1" icon="md-ionitron"></TabPane>
             <TabPane label="组件" name="name2" icon="md-outlet"></TabPane>
             <TabPane label="专业版" name="name3" icon="md-pizza"></TabPane>
             <TabPane label="社区" name="name4" icon="ios-podium"></TabPane>
             <TabPane label="教程" name="name5" icon="logo-snapchat"></TabPane>
         </Tabs>
-        <Input class="header-input" placeholder="请输入搜索内容" />
     </div>
 </template>
 
 <script>
-import { Tabs, TabPane, Input } from "iview";
+import { Tabs, TabPane, Input, Button } from "iview";
 // const TabPane = Tabs.TabPane;
 export default {
     props: {},
@@ -34,7 +38,8 @@ export default {
     components: {
         Tabs,
         TabPane,
-        Input
+        Input,
+        Button
     },
     filters: {}
 };
@@ -46,6 +51,7 @@ export default {
     width: 95%;
     margin: 0 auto;
     box-shadow: 0px 5px 22px 0px rgba(57, 72, 95, 0.2);
+    background-color: #515a6e;
 }
 .logo-a {
     height: 50px;
@@ -67,6 +73,7 @@ export default {
 .ivu-tabs-nav .ivu-tabs-tab {
     padding-bottom: 25px !important;
     font-size: 14px;
+    color: #ffffff;
 }
 .ivu-tabs-ink-bar {
     height: 3px !important;
@@ -74,10 +81,18 @@ export default {
 .header-input {
     float: left;
     width: 250px !important;
-    margin-left: 75px;
     margin-top: 17px;
+    position: relative;
+    left: 152px;
 }
 .ivu-input {
     border: 0 !important;
+    background-color: #515a6e !important;
+    color: #ffffff !important;
+}
+.login-register {
+    float: right;
+    margin-top: 15px;
+    margin-left: 300px;
 }
 </style>

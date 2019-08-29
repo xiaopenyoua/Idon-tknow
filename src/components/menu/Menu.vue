@@ -1,6 +1,10 @@
 <template>
     <div class="menu">
-        <Menu>
+        <Menu
+            theme="dark"
+            style="width: auto;height: calc(100vh - 65px);"
+            @on-select="menuSelect"
+        >
             <menu-item name="1">
                 <Icon type="ios-jet" />
                 狗子帆</menu-item
@@ -14,8 +18,8 @@
                     <Icon type="md-egg" />
                     guan头
                 </template>
-                <menu-item naem="3-1">大guan头</menu-item>
-                <menu-item naem="3-2">小guan头</menu-item>
+                <menu-item name="3-1">大guan头</menu-item>
+                <menu-item name="3-2">小guan头</menu-item>
             </Submenu>
             <Submenu name="4">
                 <template slot="title">
@@ -23,11 +27,11 @@
                     枪械
                 </template>
                 <MenuGroup title="自动步枪">
-                    <menu-item naem="4-1">M416</menu-item>
+                    <menu-item name="4-1">M416</menu-item>
                     <menu-item name="4-2">QBU</menu-item>
                 </MenuGroup>
                 <MenuGroup title="冲锋枪"
-                    ><menu-item naem="4-3">UZI</menu-item></MenuGroup
+                    ><menu-item name="4-3">UZI</menu-item></MenuGroup
                 >
             </Submenu>
             <Submenu name="5">
@@ -52,11 +56,21 @@ export default {
     created() {},
     mounted() {},
     watch: {},
-    methods: {},
+    methods: {
+        menuSelect(e) {
+            if (e === "2") {
+                window.location.href = "https://www.baidu.com";
+            }
+        }
+    },
     components: { Menu, Submenu, Icon, MenuItem, MenuGroup },
     filters: {}
 };
 </script>
 
 <style lang="scss">
+// .menu {
+//     top: 65px;
+//     position: fixed;
+// }
 </style>
